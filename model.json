@@ -1,0 +1,133 @@
+{
+  "intents": [
+    {
+      "name": "AMAZON.CancelIntent",
+      "samples": []
+    },
+    {
+      "name": "AMAZON.HelpIntent",
+      "samples": []
+    },
+    {
+      "name": "AMAZON.StopIntent",
+      "samples": []
+    },
+    {
+      "name": "GetHNNews",
+      "samples": [
+        "hacker news"
+      ],
+      "slots": []
+    },
+    {
+      "name": "GetNetSec",
+      "samples": [
+        "reddit",
+        "reddit netsec",
+        "netsec"
+      ],
+      "slots": []
+    },
+    {
+      "name": "GetSomeNews",
+      "samples": [
+        "read me news",
+        "read me feeds",
+        "read me headlines",
+        "give me news",
+        "give me feeds",
+        "give me headlines",
+        "read news",
+        "read headlines",
+        "read {newsType} ",
+        "{newsType} me",
+        "read me {newsType} ",
+        "read me {newsType} headlines",
+        "give me {newsType} ",
+        "give me {newsType} headlines"
+      ],
+      "slots": [
+        {
+          "name": "newsType",
+          "type": "newsType",
+          "samples": [
+            "{newsType} "
+          ]
+        }
+      ]
+    }
+  ],
+  "types": [
+    {
+      "name": "newsType",
+      "values": [
+        {
+          "name": {
+            "value": "hacker news"
+          }
+        },
+        {
+          "name": {
+            "value": "netsec"
+          }
+        },
+        {
+          "name": {
+            "value": "reddit netsec"
+          }
+        },
+        {
+          "name": {
+            "value": "reddit"
+          }
+        }
+      ]
+    }
+  ],
+  "prompts": [
+    {
+      "id": "Elicit.Intent-GetSomeNews.IntentSlot-newsType",
+      "promptVersion": "1.0",
+      "definitionVersion": "1.0",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "hacker news or reddit netsec?"
+        }
+      ]
+    }
+  ],
+  "dialog": {
+    "version": "1.0",
+    "intents": [
+      {
+        "name": "GetHNNews",
+        "confirmationRequired": false,
+        "prompts": {},
+        "slots": []
+      },
+      {
+        "name": "GetNetSec",
+        "confirmationRequired": false,
+        "prompts": {},
+        "slots": []
+      },
+      {
+        "name": "GetSomeNews",
+        "confirmationRequired": false,
+        "prompts": {},
+        "slots": [
+          {
+            "name": "newsType",
+            "type": "newsType",
+            "elicitationRequired": true,
+            "confirmationRequired": false,
+            "prompts": {
+              "elicit": "Elicit.Intent-GetSomeNews.IntentSlot-newsType"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
