@@ -1,6 +1,10 @@
-# CryptoBot Alexa Skill
+# HackerBuzz Alexa Skill
 
-Based off of Amazon's [space geek template](https://github.com/alexa/skill-sample-nodejs-fact)
+Read 5 articles from [Hacker News](https://news.ycombinator.com) or [/r/netsec](https://www.reddit.com/r/netsec) that meet certain reputation criteria
 
-Get a random alternative fact about Bruce Schneier, the well respected cryptographer, from the humorous site [Schneier's Fact](https://www.schneierfacts.com)
-
+```
+Alexa, open hacker buzz
+Alexa, ask hacker buzz to netsec me
+Alexa, ask hacker buzz for hacker news
+Alexa, ask hacker buzz to read me news
+```
